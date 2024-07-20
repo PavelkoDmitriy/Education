@@ -1,9 +1,21 @@
 grades = [[5, 3, 3, 5, 4], [2, 2, 2, 3], [4, 5, 5, 2], [4, 4, 3], [5, 5, 5, 4, 5]]
 students = {'Johnny', 'Bilbo', 'Steve', 'Khendrik', 'Aaron'}
+average_rating = []
+students = sorted(list(students))
+
+# решение без доп. переменной для подсчета средней оценки
+# for i in range(len(grades)):
+#    grades[i] = sum(grades[i]) / len(grades[i])
+# report_card = dict(zip(students, grades))
+
+# решение без циклов
 # students = list(students)
 # students.sort()
-students = sorted(list(students))
-report_card = {students[0]: sum(grades[0]) / len(grades[0]), students[1]: sum(grades[1]) / len(grades[1]),
-               students[2]: sum(grades[2]) / len(grades[2]), students[3]: sum(grades[3]) / len(grades[3]),
-               students[4]: sum(grades[4]) / len(grades[4])}
+# report_card = {students[0]: sum(grades[0]) / len(grades[0]), students[1]: sum(grades[1]) / len(grades[1]),
+#               students[2]: sum(grades[2]) / len(grades[2]), students[3]: sum(grades[3]) / len(grades[3]),
+#               students[4]: sum(grades[4]) / len(grades[4])}
+
+for i in grades:
+    average_rating.append(sum(i) / len(i))
+report_card = dict(zip(students, average_rating))
 print(report_card)
