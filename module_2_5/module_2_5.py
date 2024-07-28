@@ -1,3 +1,4 @@
+"""
 def get_matrix(n, m, value):
     matrix = []
     if n <= 0 or m <= 0:
@@ -6,6 +7,15 @@ def get_matrix(n, m, value):
         matrix.append([])
         for j in range(m):
             matrix[i].append(value)
+    return matrix
+"""
+
+
+def get_matrix(n, m, value):
+    matrix = []
+    for i in range(n):
+        x = [value] * m
+        matrix.append(x)
     return matrix
 
 
