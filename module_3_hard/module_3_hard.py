@@ -1,19 +1,19 @@
-def calculate_structure_sum(*args):
-    total = 0
-    for arg in args:
-        match arg:
+def calculate_structure_sum(*arg):
+    res = 0
+    for i in arg:
+        match i:
             case int() | float():
-                total += arg
+                res += i
             case str():
-                total += len(arg)
+                res += len(i)
             case dict():
-                total += calculate_structure_sum(*arg.keys(), *arg.values())
-            case (list() | tuple() | set()) as collection:
-                total += calculate_structure_sum(*collection)
-    return total
+                res += calculate_structure_sum(*i.values())
+                res += calculate_structure_sum(*i.keys())
+            case list() | tuple() | set():
+                res += calculate_structure_sum(*i)
+    return res
 
 
-# Пример использования
 data_structure = [
     [1, 2, 3],
     {'a': 4, 'b': 5},
@@ -23,4 +23,4 @@ data_structure = [
 ]
 
 result = calculate_structure_sum(data_structure)
-print(result)  # Выводит: 99
+print(result)
