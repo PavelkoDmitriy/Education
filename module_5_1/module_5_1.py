@@ -13,9 +13,11 @@ class House:
                 print(i)
                 i += 1
             """
-            for i in range(1, new_floor + 1):
+            """for i in range(1, new_floor + 1):
                 print(i)
-
+            """
+            for i in range(new_floor):
+                print(i + 1)
 
 h1 = House('ЖК Горский', 18)
 h2 = House('Домик в деревне', 2)
