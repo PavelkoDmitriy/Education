@@ -1,4 +1,4 @@
-def isinstance_(arg):
+'''def isinstance_(arg):
     """if isinstance(arg, House):
         return arg.number_of_floors
     elif isinstance(arg, int):
@@ -8,6 +8,7 @@ def isinstance_(arg):
             return arg.number_of_floors
         case int():
             return arg
+'''
 
 
 class House:
@@ -28,26 +29,34 @@ class House:
     def __str__(self):
         return f"Название: {self.name}, кол-во этажей: {self.number_of_floors}"
 
+    @staticmethod
+    def isinstance_(arg):
+        match arg:
+            case House():
+                return arg.number_of_floors
+            case int():
+                return arg
+
     def __eq__(self, other):
-        return self.number_of_floors == isinstance_(other)
+        return self.number_of_floors == House.isinstance_(other)
 
     def __lt__(self, other):
-        return self.number_of_floors < isinstance_(other)
+        return self.number_of_floors < House.isinstance_(other)
 
     def __le__(self, other):
-        return self.number_of_floors <= isinstance_(other)
+        return self.number_of_floors <= House.isinstance_(other)
 
     def __gt__(self, other):
-        return self.number_of_floors > isinstance_(other)
+        return self.number_of_floors > House.isinstance_(other)
 
     def __ge__(self, other):
-        return self.number_of_floors >= isinstance_(other)
+        return self.number_of_floors >= House.isinstance_(other)
 
     def __ne__(self, other):
-        return self.number_of_floors != isinstance_(other)
+        return self.number_of_floors != House.isinstance_(other)
 
     def __add__(self, value):
-        self.number_of_floors += isinstance_(value)
+        self.number_of_floors += House.isinstance_(value)
         return self
 
     def __radd__(self, value):
