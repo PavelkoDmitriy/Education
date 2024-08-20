@@ -1,8 +1,13 @@
 def isinstance_(arg):
-    if isinstance(arg, House):
+    """if isinstance(arg, House):
         return arg.number_of_floors
     elif isinstance(arg, int):
-        return arg
+        return arg"""
+    match arg:
+        case House():
+            return arg.number_of_floors
+        case int():
+            return arg
 
 
 class House:
