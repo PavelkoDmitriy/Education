@@ -1,8 +1,8 @@
 class House:
     houses_history = []
 
-    def __new__(cls, *args, **kwargs):
-        cls.houses_history.append(args)
+    def __new__(cls, name, number_of_floors):
+        cls.houses_history.append(name)
         return super().__new__(cls)
 
     def __init__(self, name, number_of_floors):
