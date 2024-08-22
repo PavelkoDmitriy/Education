@@ -1,13 +1,11 @@
 class House:
-
-    def __new__(cls, *args, **kwargs):
-
-        return super().__new__(cls)
-
     houses_history = []
 
+    def __new__(cls, *args, **kwargs):
+        cls.houses_history.append(args)
+        return super().__new__(cls)
+
     def __init__(self, name, number_of_floors):
-        self.houses_history.append(name)
         self.name = name
         self.number_of_floors = number_of_floors
 
