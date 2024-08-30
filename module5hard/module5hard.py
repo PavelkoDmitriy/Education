@@ -1,6 +1,3 @@
-import time
-
-
 class User:
     def __init__(self, nickname, password, age):
         self.nickname = nickname
@@ -60,8 +57,35 @@ class UrTube:
             if search_word.lower() in video.title.lower():
                 search_list.append(video.title)
         return search_list
+    
+    def play_video(self, video):
+        from time import sleep as delay
 
+
+        for sec in range(1, video.duration + 1):
+            print(sec, end=' ')
+            delay(1)
+        print("Конец видео")
+        video.time_now = 0
+        return       
+
+    
     def watch_video(self, title):
+        if self.current_user == None:
+            print("Войдите в аккаунт, чтобы смотреть видео")
+            return
+        
+        for video in self.videos:
+            if video.title == title:
+                if self.current_user.age < 18 and video.adult_mode:
+                    print("Вам нет 18 лет, пожалуйста покиньте страницу")
+                    return
+                self.play_video(video)
+                return
+        print("Видео не найдено")
+    
+    
+    """def watch_video(self, title):
         if self.current_user is None:
             print("Войдите в аккаунт, чтобы смотреть видео")
         else:
@@ -78,7 +102,7 @@ class UrTube:
                     print("Конец видео")
                     video.time_now = 0
                     return
-        print("Видео не найдено")
+        print("Видео не найдено")"""
 
 
 ur = UrTube()
