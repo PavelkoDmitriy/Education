@@ -7,16 +7,16 @@ class Vehicle:
         self.__COLOR_VARIANTS = ['blue', 'red', 'green', 'black', 'white']
 
     def get_model(self):
-        return print(f"Модель: {self.__model}")
+        print(f"Модель: {self.__model}")
 
     def get_horsepower(self):
-        return print(f"Мощность двигателя: {self.__engine_power}")
+        print(f"Мощность двигателя: {self.__engine_power}")
 
     def get_color(self):
-        return print(f"Цвет: {self.__color}")
+        print(f"Цвет: {self.__color}")
 
     def get_owner(self):
-        return print(f"Владелец: {self.owner}")
+        print(f"Владелец: {self.owner}")
 
     def print_info(self):
         self.get_model()
