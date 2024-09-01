@@ -1,10 +1,11 @@
 class Vehicle:
+    __COLOR_VARIANTS = ['blue', 'red', 'green', 'black', 'white']
     def __init__(self, owner, model, color, engine_power):
         self.owner = owner
         self.__model = model
         self.__engine_power = int(engine_power)
         self.__color = color
-        self.__COLOR_VARIANTS = ['blue', 'red', 'green', 'black', 'white']
+        #self.__COLOR_VARIANTS = ['blue', 'red', 'green', 'black', 'white']
 
     def get_model(self):
         print(f"Модель: {self.__model}")
@@ -33,7 +34,11 @@ class Vehicle:
 
 
 class Sedan(Vehicle):
-    pass
+    __PASSENGERS_LIMIT = 5
+
+    def __init__(self, owner, model, color, engine_power):
+        super().__init__(owner, model, color, engine_power)
+
 
 
 # Текущие цвета __COLOR_VARIANTS = ['blue', 'red', 'green', 'black', 'white']
@@ -49,3 +54,5 @@ vehicle1.owner = 'Vasyok'
 
 # Проверяем что поменялось
 vehicle1.print_info()
+"""print(dir(vehicle1))
+print(vehicle1._Sedan__PASSENGERS_LIMIT)"""
