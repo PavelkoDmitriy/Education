@@ -18,11 +18,14 @@ class Shop:
         
     def add(self, *products):
         list_ = []
+        l = self.get_products().split('\n')
         for i in products:
-            if i.name() not in file:
-                list_.append(i.str())
-        file = open(self.__file_name, 'w')
-        file.write(*list_)
+            if str(i) not in l:
+                list_.append(str(i))
+            else:
+                print(f'Продукт {i} уже есть в магазине')
+        file = open(self.__file_name, 'a')
+        file.write('\n'.join(list_))
         file.close()
 
 
@@ -36,4 +39,3 @@ print(p2) # __str__
 s1.add(p1, p2, p3)
 
 print(s1.get_products())
-
