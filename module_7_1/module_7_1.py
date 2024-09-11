@@ -14,9 +14,26 @@ class Shop:
         file = open(self.__file_name, 'r')
         file_ = file.read()
         file.close()
-        print(file_)
+        return file_
+        
+    def add(self, *products):
+        list_ = []
+        for i in products:
+            if i.name() not in file:
+                list_.append(i.str())
+        file = open(self.__file_name, 'w')
+        file.write(*list_)
+        file.close()
 
 
-Shop().get_products()
+s1 = Shop()
+p1 = Product('Potato', 50.5, 'Vegetables')
+p2 = Product('Spaghetti', 3.4, 'Groceries')
+p3 = Product('Potato', 5.5, 'Vegetables')
 
+print(p2) # __str__
+
+s1.add(p1, p2, p3)
+
+print(s1.get_products())
 
