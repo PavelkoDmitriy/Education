@@ -14,6 +14,7 @@ class WordsFinder:
                     text = text.replace(char, '')
                 self.dict_[i] = text.split()
         return self.dict_
+    
     def find(self, word):
         result = {}
         flag = 1
