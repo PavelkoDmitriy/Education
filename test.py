@@ -1,9 +1,10 @@
 def all_variants(text):
-    pass
+    for length in range(1, len(text) + 1):
+        for start in range(len(text) - length + 1):
+            yield text[start:start + length]
+
 
 text = "abc"
-
-count = 0
-for i in range(len(text)):
-    print(text[count:count+3])
-    count += 1
+generator = all_variants(text)
+for variant in generator:
+    print(variant)
