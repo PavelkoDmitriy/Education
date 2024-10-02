@@ -18,7 +18,6 @@ class Knight(Thread):
             print(f"{self.name} сражается {self.__days} день(дня)..., осталось {self.__enemies} воинов.")
             delay(1)
         print(f"{self.name} одержал победу спустя {self.__days} дней(дня)!")
-        delay(1)
 
 
 first_knight = Knight('Sir Lancelot', 10)
