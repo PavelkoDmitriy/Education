@@ -14,3 +14,4 @@ module_9_2/__pycache__/module_9_2.cpython-312.pyc
 .idea/Education.iml
 .idea/misc.xml
 .idea/vcs.xml
+*.pyc
