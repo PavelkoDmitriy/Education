@@ -35,7 +35,6 @@ class TournamentTest(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        # Выводим все результаты тестов
         for test_name, result in cls.all_results.items():
             printable_result = {place: runner.name for place, runner in result.items()}
             print(printable_result)
