@@ -15,11 +15,6 @@ async def start(message):
     await message.answer('Привет! Я бот помогающий твоему здоровью.')
 
 
-@dp.message_handler()
-async def all_messages(messege):
-    #print( 'Введите команду /start, чтобы начать общение.')
-    await messege.answer('Введите команду /start, чтобы начать общение.')
-
 
 class UserState(StatesGroup):
     age = State()
