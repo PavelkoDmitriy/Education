@@ -43,6 +43,15 @@ res = cursor.fetchall()
 for i in res:
     print(f'Имя: {i[0]} | Почта: {i[1]} | Возраст: {i[2]} | Баланс: {i[3]}')
 
+cursor.execute("DELETE FROM Users WHERE rowid = ?", (6,))
+
+cursor.execute("SELECT COUNT(*) FROM Users")
+total_users = cursor.fetchone()[0]
+
+cursor.execute("SELECT SUM(balance) FROM Users")
+all_balances = cursor.fetchone()[0]
+
+print(all_balances / total_users)
 
 """cursor.execute("UPDATE Users SET age = ? WHERE username = ?", (32, 'John'))
 cursor.execute("DELETE FROM Users WHERE username = ?", ('John',))
