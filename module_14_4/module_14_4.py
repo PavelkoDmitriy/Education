@@ -17,7 +17,7 @@ kb = ReplyKeyboardMarkup(resize_keyboard=True)
 button1 = KeyboardButton(text='Рассчитать')
 button2 = KeyboardButton(text='Информация')
 button_buy = KeyboardButton(text='Купить')
-kb.add(button1, button2)
+kb.add(button1, button2, button_buy)
 
 
 kb1 = InlineKeyboardMarkup()
